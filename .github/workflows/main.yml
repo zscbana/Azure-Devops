@@ -1,0 +1,16 @@
+name: Triger Azure pipline
+on:
+  push: 
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Pipelines Action
+        uses: Azure/pipelines@v1.2
+        with:
+          azure-devops-project-url: ${{ secrets.Dev_URL }}
+          azure-pipeline-name: "zscbana.Azure-Devops"
+          azure-devops-token: ${{ secrets.Dev_token }}
+                    
