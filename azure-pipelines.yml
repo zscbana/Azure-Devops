@@ -8,7 +8,6 @@ trigger:
 
 pool:
   name: Self-Hosted-Linux
-  demands: lin1
 
 steps:
 - script: echo Hello, world!
