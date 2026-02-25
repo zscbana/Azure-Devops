@@ -9,11 +9,12 @@ trigger:
 pool:
   name: Self-Hosted-Linux
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: Test
+  jobs:
+  - job: Test01
+    displayName: Test01
+    pool: Self-Hosted-Linux
+    steps:
+    - script: echo Testing!
