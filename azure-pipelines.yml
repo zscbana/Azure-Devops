@@ -7,15 +7,15 @@ trigger:
 - main
 
 pool:
-  name: Self-Hosted-Linux
+  name: $(AGENT_NAME)
   demands:
-    - AgentName -equals lin1
+    - AgentName -equals $(api-key)
 
 stages:
 - stage: Test
   jobs:
   - job: Test01
     displayName: Test01
-    pool: Self-Hosted-Linux
+    pool: $(AGENT_NAME)
     steps:
     - script: echo Testing!
